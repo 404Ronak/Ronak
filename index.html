@@ -2,31 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Travel Planner</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TripTailor - Plan Your Perfect Journey</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Plan Your Dream Trip to Gujarat</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Trip Planner</a>
-      <a href="#">Gallery</a>
-      <a href="#">Reviews</a>
-      <a href="#">Contact Us</a>
-    </nav>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">TripTailor</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trip.html">Trip Planner</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Plan Your Journey Smarter, Not Harder</h1>
+    <p>Whether you're visiting Gujarat for 3 days or 10, we'll create a perfect, customized, time-saving plan just for you.</p>
+
+    <!-- Search Box -->
+    <form class="search-box" action="trip.html" method="GET">
+      <input type="text" placeholder="e.g. Gujarat, 7 days" name="query" required />
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Call to Action -->
+    <a href="trip.html" class="cta-button">Start Planning Now</a>
   </header>
 
-  <main>
-    <section>
-      <h2>Tell us where you're going</h2>
-      <p>Get a full 7-day personalized trip plan with hotel booking, activities, food guides, and more!</p>
-    </section>
-  </main>
+  <!-- Highlights Section -->
+  <section class="highlights">
+    <div class="highlight">
+      <h3>✅ Time-Saving</h3>
+      <p>No more googling hundreds of blogs — get a full trip plan in seconds.</p>
+    </div>
+    <div class="highlight">
+      <h3>📍 Customized Plan</h3>
+      <p>Built based on your location, days, and interests.</p>
+    </div>
+    <div class="highlight">
+      <h3>💰 Budget Options</h3>
+      <p>Compare plans from local to luxury — all in one place.</p>
+    </div>
+    <div class="highlight">
+      <h3>📥 Offline PDF</h3>
+      <p>Get your full plan as downloadable PDF to use anywhere.</p>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Ronak's Smart Planner. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 TripTailor. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
