@@ -277,3 +277,122 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - TripTailor</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f9c846;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .reviews {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .review {
+      background-color: #1a1a1a;
+      padding: 15px 20px;
+      border-left: 5px solid #f9c846;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .review h4 {
+      margin: 0 0 5px;
+      color: #f9c846;
+    }
+
+    .review p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Travel Gallery</h1>
+
+  <div class="gallery" id="gallery">
+    <!-- Images will load here -->
+  </div>
+
+  <h1>Traveler Reviews</h1>
+  <div class="reviews" id="reviews">
+    <!-- Reviews will appear here -->
+  </div>
+
+  <script>
+    // RANDOM IMAGES (You must have images named img1.jpg to img12.jpg in /images/)
+    const galleryDiv = document.getElementById('gallery');
+    const randomIndexes = Array.from({length: 8}, () => Math.floor(Math.random() * 12) + 1);
+
+    randomIndexes.forEach(i => {
+      const img = document.createElement('img');
+      img.src = images/img${i}.jpg;
+      img.alt = Destination ${i};
+      galleryDiv.appendChild(img);
+    });
+
+    // FAKE REVIEWS
+    const reviewsData = [
+      {
+        name: "Ravi Patel",
+        comment: "Incredible trip planning. Everything was smooth and stress-free!"
+      },
+      {
+        name: "Aisha Khan",
+        comment: "Loved the custom plan feature. Saved me hours!"
+      },
+      {
+        name: "Daniel Roy",
+        comment: "Affordable and beautiful destinations suggested. 10/10."
+      },
+      {
+        name: "Sneha Mehra",
+        comment: "Even the hotel recommendations were on point. Highly recommend!"
+      },
+      {
+        name: "Arjun Desai",
+        comment: "Their PDF trip plans are awesome. Professional and neat!"
+      }
+    ];
+
+    const reviewsDiv = document.getElementById("reviews");
+
+    reviewsData.forEach(r => {
+      const box = document.createElement('div');
+      box.classList.add('review');
+      box.innerHTML = <h4>${r.name}</h4><p>"${r.comment}"</p>;
+      reviewsDiv.appendChild(box);
+    });
+  </script>
+</body>
+</html>
