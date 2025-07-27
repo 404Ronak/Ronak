@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trip Planner - TripTailor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">TripTailor</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trip.html">Trip Planner</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Trip Planner Section -->
+  <section class="trip-planner">
+    <h1>Plan Your Trip</h1>
+    <p>Enter your destination and number of days. We'll create your customized plan instantly.</p>
+
+    <form id="tripForm">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" placeholder="e.g., Ahmedabad, Gujarat" required />
+
+      <label for="days">Number of Days:</label>
+      <input type="number" id="days" name="days" placeholder="e.g., 5" min="1" required />
+
+      <button type="submit">Generate Plan</button>
+    </form>
+
+    <div id="tripResult" class="trip-result" style="display: none;">
+      <h2>Your 100% Personalized Plan</h2>
+      <p><strong>Destination:</strong> <span id="resultDestination"></span></p>
+      <p><strong>Duration:</strong> <span id="resultDays"></span> days</p>
+      <ul id="itineraryList">
+        <!-- Trip plan will be inserted here -->
+      </ul>
+
+      <button id="downloadPdfBtn">Download as PDF</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 TripTailor. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional JS -->
+  <script>
+    const form = document.getElementById("tripForm");
+    const resultSection = document.getElementById("tripResult");
+    const resultDestination = document.getElementById("resultDestination");
+    const resultDays = document.getElementById("resultDays");
+    const itineraryList = document.getElementById("itineraryList");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const destination = document.getElementById("destination").value;
+      const days = parseInt(document.getElementById("days").value);
+
+      resultDestination.textContent = destination;
+      resultDays.textContent = days;
+
+      itineraryList.innerHTML = "";
+      for (let i = 1; i <= days; i++) {
+        const li = document.createElement("li");
+        li.textContent = Day ${i}: Explore top places in ${destination}, enjoy local food & plan relaxation time.;
+        itineraryList.appendChild(li);
+      }
+
+      resultSection.style.display = "block";
+    });
+
+    document.getElementById("downloadPdfBtn").addEventListener("click", () => {
+      alert("PDF download feature coming soon!");
+      // Later you can integrate html2pdf.js or backend API here
+    });
+  </script>
+
+</body>
+</html>
