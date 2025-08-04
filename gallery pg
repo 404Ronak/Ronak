@@ -1,0 +1,8 @@
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="slider">
+    <img id="slide" src="" alt="Random image">
+  </div>
+  <button id="prev">←</button>
+  <button id="next">→</button>
+</section>
